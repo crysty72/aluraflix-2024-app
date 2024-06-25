@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:3000/videos', // URL base para las solicitudes a la API local
+  baseURL: 'http://localhost:3000/', // URL base para las solicitudes a la API local
 });
 
 export const getVideos = async () => {

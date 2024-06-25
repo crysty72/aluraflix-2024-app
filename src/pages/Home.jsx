@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react';
 import Header from '../components/Header/Header';
@@ -7,6 +8,7 @@ import Footer from '../components/Footer/Footer';
 import VideoModal from '../components/Modal/VideoModal';
 import { getVideos, updateVideo, deleteVideo, addVideo } from '../api/api';
 import { datos } from '../data/archivos_iniciales';
+
 
 const Home = () => {
   const [videos, setVideos] = useState([]);

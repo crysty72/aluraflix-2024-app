@@ -16,7 +16,10 @@ const HeaderWrapper = styled.header`
 const LogoImage = styled.img`
   height: 50px;
   width: auto;
-`;
+  
+`
+
+
 
 const NavButton = styled(NavLink)`
   margin-left: 10px;
