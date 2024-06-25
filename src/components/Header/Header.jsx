@@ -13,9 +13,8 @@ const HeaderWrapper = styled.header`
   background-size: cover;
 `;
 
-// Estilo para el logo
 const LogoImage = styled.img`
-  height: 50px; // Ajusta el tamaño según tus necesidades
+  height: 50px;
   width: auto;
 `;
 
@@ -36,12 +35,10 @@ const NavButton = styled(NavLink)`
 const Header = () => {
   return (
     <HeaderWrapper>
-      {/* Importa tu logo y ajusta la ruta según dónde lo hayas guardado */}
+      {/* Asegúrate de que la ruta sea correcta */}
       <LogoImage src="/assets/img/LogoAlura.png" alt="Logo Alura" />
       <nav>
-        {/* Agrega exact para asegurar que la coincidencia de la ruta sea exacta */}
-        <NavButton to="/" exact>Home</NavButton>
-        {/* Asegúrate de que la ruta coincida exactamente con la ruta de tu componente NewVideo */}
+        <NavButton to="/" end>Home</NavButton>
         <NavButton to="/new-video">Nuevo Video</NavButton>
       </nav>
     </HeaderWrapper>

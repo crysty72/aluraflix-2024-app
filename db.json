@@ -71,6 +71,30 @@
       "urlImagen": "../assets/img/IG3.png",
       "descripcion": "En este video nuestra invitada, Andyara, nos explicará que són las muy conocidas hoy en día metodologias ágiles y nos comentará un poco sobre como aplicarlas y cuáles son los beneficios de utilizarlas en su equipo o empresa.",
       "categoria": "Innovación y Gestión"
+    },
+    {
+      "id": "2",
+      "nombre": "Cuando usar Let, var y const",
+      "categoria": "Categoría 1",
+      "urlImagen": "frontend1.png",
+      "urlVideo": "https://www.youtube.com/watch?v=PztCEdIJITY&t",
+      "descripcion": "A veces cuando estás programando sientes dificultades en saber en qué momento utilizar let, var o const para declarar una variable? En este video te sacamos estas dudas, además de explicarte lo que es escopa global y local en JavaScript."
+    },
+    {
+      "id": "2",
+      "nombre": "Cuando usar Let, var y const",
+      "categoria": "Categoría 1",
+      "urlImagen": "frontend1.png",
+      "urlVideo": "https://www.youtube.com/watch?v=PztCEdIJITY&t",
+      "descripcion": "A veces cuando estás programando sientes dificultades en saber en qué momento utilizar let, var o const para declarar una variable? En este video te sacamos estas dudas, además de explicarte lo que es escopa global y local en JavaScript"
+    },
+    {
+      "id": "c9c9",
+      "nombre": "Cuando usar Let, var y const",
+      "categoria": "Front End",
+      "urlImagen": "../assets/img/frontend1.png",
+      "urlVideo": "https://www.youtube.com/watch?v=PztCEdIJITY&t",
+      "descripcion": "A veces cuando estás programando sientes dificultades en saber en qué momento utilizar let, var o const para declarar una variable? En este video te sacamos estas dudas, además de explicarte lo que es escopo global y local en JavaScript"
     }
   ],
   "categorias": [

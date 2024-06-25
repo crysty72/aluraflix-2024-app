@@ -64,18 +64,18 @@ const ClearButton = styled(Button)`
 `;
 
 const VideoModal = ({ isOpen, onRequestClose, video, onSave }) => {
-  const [nombre, setNombre] = useState(video.nombre);
-  const [categoria, setCategoria] = useState(video.categoria);
-  const [urlImagen, setUrlImagen] = useState(video.urlImagen);
-  const [urlVideo, setUrlVideo] = useState(video.urlVideo);
-  const [descripcion, setDescripcion] = useState(video.descripcion);
+  const [nombre, setNombre] = useState(video?.nombre || '');
+  const [categoria, setCategoria] = useState(video?.categoria || '');
+  const [urlImagen, setUrlImagen] = useState(video?.urlImagen || '');
+  const [urlVideo, setUrlVideo] = useState(video?.urlVideo || '');
+  const [descripcion, setDescripcion] = useState(video?.descripcion || '');
 
   useEffect(() => {
-    setNombre(video.nombre);
-    setCategoria(video.categoria);
-    setUrlImagen(video.urlImagen);
-    setUrlVideo(video.urlVideo);
-    setDescripcion(video.descripcion);
+    setNombre(video?.nombre || '');
+    setCategoria(video?.categoria || '');
+    setUrlImagen(video?.urlImagen || '');
+    setUrlVideo(video?.urlVideo || '');
+    setDescripcion(video?.descripcion || '');
   }, [video]);
 
   const handleSave = () => {
@@ -93,7 +93,7 @@ const VideoModal = ({ isOpen, onRequestClose, video, onSave }) => {
 
   const handleClear = () => {
     setNombre('');
-    setCategoria(datos.categorias[0].nombre);
+    setCategoria(datos.categorias.length > 0 ? datos.categorias[0].nombre : '');
     setUrlImagen('');
     setUrlVideo('');
     setDescripcion('');
@@ -102,7 +102,7 @@ const VideoModal = ({ isOpen, onRequestClose, video, onSave }) => {
   return (
     <Modal isOpen={isOpen} onRequestClose={onRequestClose}>
       <ModalContent>
-        <Title>Editar Card</Title>
+        <Title>{video ? 'Editar Video' : 'Nuevo Video'}</Title>
         <Input
           type="text"
           value={nombre}
@@ -143,12 +143,13 @@ VideoModal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   onRequestClose: PropTypes.func.isRequired,
   video: PropTypes.shape({
+    id: PropTypes.number,
     nombre: PropTypes.string,
     categoria: PropTypes.string,
     urlImagen: PropTypes.string,
     urlVideo: PropTypes.string,
     descripcion: PropTypes.string
-  }).isRequired,
+  }),
   onSave: PropTypes.func.isRequired
 };
 

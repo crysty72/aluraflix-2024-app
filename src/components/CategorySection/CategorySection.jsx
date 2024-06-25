@@ -2,10 +2,11 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const SectionWrapper = styled.section`
   padding: 20px;
-  background-color: ${(props) => props.backgroundColor || '#add8e6'}; /* Celeste */
+  background-color: ${(props) => props.backgroundColor || '#add8e6'};
 `;
 
 const SectionTitle = styled.h2`
@@ -22,29 +23,18 @@ const VideoWrapper = styled.div`
   flex: 2;
   max-width: 400px;
   position: relative;
-  margin-left:20px;
+  margin-left: 20px;
 `;
 
 const VideoImage = styled.img`
   width: 100%;
   border-radius: 10px;
+  cursor: pointer;
 `;
 
 const VideoTitle = styled.h3`
   font-size: 1rem;
   text-align: center;
-`;
-
-const Button = styled.button`
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: ${(props) => props.bgColor || 'white'};
-  border: none;
-  border-radius: 5px;
-  padding: 5px;
-  cursor: pointer;
-  color: white;
 `;
 
 const CategorySection = ({ title, videos, onEditClick, onDeleteClick, backgroundColor }) => {
@@ -54,10 +44,13 @@ const CategorySection = ({ title, videos, onEditClick, onDeleteClick, background
       <VideosWrapper>
         {videos.map((video, index) => (
           <VideoWrapper key={index}>
-            <VideoImage src={video.urlImagen} alt={video.nombre} />
+            {/* Wrap the image with Link and pass the video route as the to prop */}
+            <Link to={`/video/${video.id}`}>
+              <VideoImage src={video.urlImagen} alt={video.nombre} />
+            </Link>
             <VideoTitle>{video.nombre}</VideoTitle>
-            <Button bgColor="#ffa500" onClick={() => onEditClick(video)}>Editar</Button>
-            <Button bgColor="#ff0000" onClick={() => onDeleteClick(video)}>Borrar</Button>
+            <button onClick={() => onEditClick(video)}>Editar</button>
+            <button onClick={() => onDeleteClick(video)}>Borrar</button>
           </VideoWrapper>
         ))}
       </VideosWrapper>

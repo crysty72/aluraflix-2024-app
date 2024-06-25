@@ -19,7 +19,7 @@ const Footer = () => {
   return (
     <FooterWrapper>
       {/* Importa tu logo y ajusta la ruta según dónde lo hayas guardado */}
-      <LogoImage src="/public/assets/img/LogoAlura.png" alt="Logo de la empresa" />
+      <LogoImage src="/assets/img/LogoAlura.png" alt="Logo " />
       <p>Todos los derechos reservados &copy; 2024</p>
       <p>Desarrollado por Cristina Carrizo</p>
     </FooterWrapper>

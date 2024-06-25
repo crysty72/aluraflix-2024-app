@@ -3,53 +3,63 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
+import axios from 'axios';
 import { datos } from '../data/archivos_iniciales';
 
 const MainSection = styled.section`
-  padding: 20px;
-  background-image:url(https://tse3.mm.bing.net/th?id=OIP.EJpQNxz_tZxxESpBQTElKAHaEK&pid=Api&P=0&h=180);
-  background-repeat:no-repeat;
-  background-size:cover;
+  padding: 20px  ;
+  background-image:url(https://tse2.mm.bing.net/th?id=OIP.U4ex9V5XdYC_Cw7FBmEakgHaE8&pid=Api&P=0&h=180);
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+ 
 `;
 
 const Title = styled.h1`
   margin-bottom: 20px;
+  text-align:center;
 `;
 
 const Input = styled.input`
   display: block;
-  width: 100%;
+  width: 90%;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #0b0b0b;
   border-radius: 5px;
+  margin-left: 20px;
+ 
 `;
 
 const TextArea = styled.textarea`
   display: block;
-  width: 100%;
+  width: 90%;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #0c0c0c;
   border-radius: 5px;
+  margin-left: 20px;
 `;
 
 const Select = styled.select`
   display: block;
-  width: 100%;
+  width: 90%;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #090909;
   border-radius: 5px;
+  margin-left: 20px;
 `;
 
 const Button = styled.button`
-  padding: 10px 20px;
+  padding: 20px 20px;
   margin: 10px 5px 0 0;
   background-color: #185ddc;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  color: white;
+  margin-left: 20px;
 `;
 
 const NewVideo = () => {
@@ -60,9 +70,7 @@ const NewVideo = () => {
   const [descripcion, setDescripcion] = useState('');
 
   const handleSave = () => {
-    // Aquí puedes agregar la lógica para guardar el nuevo video
     const nuevoVideo = {
-      id: datos.videos.length + 1,
       nombre,
       categoria,
       urlImagen,
@@ -70,8 +78,18 @@ const NewVideo = () => {
       descripcion
     };
 
-    // Por ahora, solo imprimirá el nuevo video en la consola
-    console.log('Nuevo video:', nuevoVideo);
+    axios.post('http://localhost:3000/videos', nuevoVideo)
+      .then(response => {
+        console.log('Nuevo video agregado:', response.data);
+        // Lógica para actualizar el estado de videos en Home
+        // No olvides actualizar el estado de los videos en Home
+      })
+      .catch(error => {
+        console.error('Error al agregar nuevo video:', error);
+      });
+
+    // Limpia los campos después de guardar
+    handleClear();
   };
 
   const handleClear = () => {

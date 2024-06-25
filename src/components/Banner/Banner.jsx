@@ -74,11 +74,13 @@ function Banner() {
                 <BannerText>
                     <BannerCategory>Front End</BannerCategory>
                     <BannerTitle>Challenge React</BannerTitle>
-                    <BannerDescription>Este challenge es una forma de aprendizaje. Es un mecanismo donde podrás comprometerte en la resolución de un problema para poder aplicar todos los conocimientos adquiridos en la formación React.</BannerDescription>
+                    <BannerDescription>Este challenge es una forma de aprendizaje.
+                       Es un mecanismo donde podrás comprometerte en la resolución de un problema para poder aplicar todos los conocimientos adquiridos en la formación React.
+                       </BannerDescription>
                 </BannerText>
                 <BannerVideo>
                     <Link to='https://www.youtube.com/watch?v=ov7vA5HFe6w&t' target='_blank' rel="noopener noreferrer">
-                        <BannerImage src="/public/assets/img/banner.png" alt="Imagen del video" />
+                        <BannerImage src="/assets/img/banner.png" alt="Imagen del video" />
                     </Link>
                 </BannerVideo>
             </BannerContent>
