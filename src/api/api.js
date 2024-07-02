@@ -1,12 +1,13 @@
+// src/services/videoService.js
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://my-json-server.typicode.com/crysty72/aluraflix-2024-app/', // URL base para las solicitudes a la API local
+  baseURL: 'http://localhost:3001', // Cambia esto si `json-server` está en otro puerto
 });
 
 export const getVideos = async () => {
   try {
-    const response = await api.get('/'); // Obtener todos los videos
+    const response = await api.get('/videos');
     return response.data;
   } catch (error) {
     console.error("Error fetching videos:", error);
@@ -16,7 +17,7 @@ export const getVideos = async () => {
 
 export const updateVideo = async (video) => {
   try {
-    const response = await api.put(`/${video.id}`, video); // Actualizar un video por su ID
+    const response = await api.put(`/videos/${video.id}`, video);
     return response.data;
   } catch (error) {
     console.error(`Error updating video ${video.id}:`, error);
@@ -26,7 +27,7 @@ export const updateVideo = async (video) => {
 
 export const deleteVideo = async (videoId) => {
   try {
-    const response = await api.delete(`/${videoId}`); // Eliminar un video por su ID
+    const response = await api.delete(`/videos/${videoId}`);
     return response.data;
   } catch (error) {
     console.error(`Error deleting video ${videoId}:`, error);
@@ -36,7 +37,7 @@ export const deleteVideo = async (videoId) => {
 
 export const addVideo = async (newVideo) => {
   try {
-    const response = await api.post('/', newVideo); // Agregar un nuevo video
+    const response = await api.post('/videos', newVideo);
     return response.data;
   } catch (error) {
     console.error('Error adding new video:', error);
