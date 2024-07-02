@@ -2,9 +2,9 @@
 
 export const datos = {
   categorias: [
-    { id: 1, nombre: 'Front End' },
+    { id: 1, nombre: 'Front End'},
     { id: 2, nombre: 'Back End' },
-    { id: 3, nombre: 'Innovación y Gestión' }
+    { id: 3, nombre: 'Innovación y Gestión'}
     // Otras categorías
   ],
   videos: [
