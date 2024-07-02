@@ -12,6 +12,7 @@ const SectionWrapper = styled.section`
 const SectionTitle = styled.h2`
   font-size: 1.5rem;
   margin-bottom: 10px;
+  text-align: center;
 `;
 
 const VideosWrapper = styled.div`
@@ -36,6 +37,7 @@ const VideoTitle = styled.h3`
   font-size: 1rem;
   text-align: center;
 `;
+
 
 const CategorySection = ({ title, videos, onEditClick, onDeleteClick, backgroundColor }) => {
   return (
